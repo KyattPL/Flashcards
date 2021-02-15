@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -24,7 +24,7 @@ class SignUpPage extends React.Component {
             }
         }).then(res => res.text()).then(data => {
             if (data == "OK") {
-                window.location.replace(process.env.PUBLIC_URL);
+                window.location.replace(window.location.origin);
             }
         });
     }
