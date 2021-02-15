@@ -38,6 +38,8 @@ app.post('/signup', (req, res) => {
     });
 });
 
-const server = app.listen(5000, () => {
-    console.log(`Listening on port 5000...`);
+const port = process.env.PORT || 5000;
+
+const server = app.listen(port, () => {
+    console.log(`Listening on port ${port}...`);
 })
