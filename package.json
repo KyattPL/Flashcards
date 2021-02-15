@@ -1,0 +1,15 @@
+{
+    "name": "flashcards",
+    "version": "0.1.0",
+    "main": "server.js",
+    "license": "MIT",
+    "dependencies": {
+        "express": "4.17.1",
+        "body-parser": "1.19.0",
+        "mongoose": "5.11.15",
+        "cors": "2.8.5"
+    },
+    "scripts": {
+        "start": "node server.js"
+    }
+}
