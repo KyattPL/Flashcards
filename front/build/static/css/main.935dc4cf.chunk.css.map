@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/styles/Header.css"],"names":[],"mappings":"AAAA,QACI,eACJ,CAEA,cACI,iBACJ,CAEA,UACI,iBACJ","file":"main.935dc4cf.chunk.css","sourcesContent":[".navbar {\r\n    min-height: 80px;\r\n}\r\n\r\n.navbar-brand {\r\n    font-size: 1.75rem;\r\n}\r\n\r\n.nav-link {\r\n    font-size: 1.25rem;\r\n}"]}

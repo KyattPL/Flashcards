@@ -14,7 +14,7 @@ mongoose.connect(dbURL, (err) => {
 
 const User = mongoose.model("User", { name: String, email: String, password: String }, "Users");
 
-app.use(express.static(path.join(__dirname, "/front/public")));
+app.use(express.static(path.join(__dirname, "/front/build")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
