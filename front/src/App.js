@@ -13,7 +13,7 @@ import SignUpPage from './components/SignUpPage.js';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Header />
         <Switch>
