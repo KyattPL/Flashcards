@@ -5,9 +5,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
 
-const dbURL = "mongodb+srv://admin_user:jM9CkiXJqG1A3V4r@cluster0.ysomq.mongodb.net/Flashcards?retryWrites=true&w=majority";
-
-mongoose.connect(dbURL, (err) => {
+mongoose.connect(process.env.MONGODB_URI, (err) => {
     if (err) console.log(err);
     else console.log(`Connected to the database`);
 })
