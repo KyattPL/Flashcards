@@ -24,7 +24,7 @@ class SignUpPage extends React.Component {
             }
         }).then(res => res.text()).then(data => {
             if (data == "OK") {
-                window.location.replace("http://localhost:3000/");
+                window.location.replace(process.env.PUBLIC_URL);
             }
         });
     }
