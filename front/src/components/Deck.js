@@ -1,3 +1,5 @@
+import React from 'react';
+
 import CardDeck from 'react-bootstrap/CardDeck';
 
 import Flashcard from './Flashcard.js';

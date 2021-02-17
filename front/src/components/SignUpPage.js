@@ -1,5 +1,4 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -30,10 +29,7 @@ class SignUpPage extends React.Component {
     }
 
     validateEmail = (nick, email, pass) => {
-        if (email == "") {
-            this.setState({ validated: this.state.validated, properData: false });
-            return;
-        }
+        if (email == "") return;
         fetch("/emailInUse", {
             body: JSON.stringify({ email: email.value }),
             method: "POST",
@@ -46,7 +42,6 @@ class SignUpPage extends React.Component {
             } else {
                 email.setCustomValidity('Email address already in use');
                 email.reportValidity();
-                this.setState({ validated: this.state.validated, properData: false });
             }
         });
     }

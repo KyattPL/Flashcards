@@ -7,11 +7,25 @@ import FormControl from 'react-bootstrap/FormControl';
 
 class LoginPage extends React.Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             validated: false
         }
+    }
+
+    tryLoggingIn = (email, password) => {
+        fetch("/login", {
+            body: JSON.stringify({ email: email, pass: password }),
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.text()).then(result => {
+            if (result == "OK") {
+                this.props.changeLoggedStatus();
+            }
+        });
     }
 
     handleSubmit = (event) => {
@@ -23,7 +37,7 @@ class LoginPage extends React.Component {
         if (form.checkValidity() === true) {
             const email = form.elements[0].value;
             const password = form.elements[1].value;
-            console.log(`Email: ${email}, pass: ${password}`);
+            this.tryLoggingIn(email, password);
         }
     }
 

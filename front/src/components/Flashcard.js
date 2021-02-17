@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Card from 'react-bootstrap/Card';
 
 function Flashcard() {
@@ -6,7 +8,7 @@ function Flashcard() {
             <Card.Body>
                 <Card.Title>Test</Card.Title>
                 <Card.Subtitle>Additional info</Card.Subtitle>
-                <Card.Text>Yep Yep Yep Yep Yep Pepega</Card.Text>
+                <Card.Text>Card info</Card.Text>
             </Card.Body>
         </Card>
     )

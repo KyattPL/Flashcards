@@ -1,8 +1,12 @@
+import React from 'react';
+
 import Nav from 'react-bootstrap/Nav';
 
-function LoginName() {
+function LoginName(props) {
     return (
-        <Nav className="navbar-text mr-3">Not logged in</Nav>
+        props.loggedStatus ?
+            <Nav className="navbar-text mr-3">{props.user}</Nav>
+            : <Nav className="navbar-text mr-3">Not logged in</Nav>
     );
 }
 
