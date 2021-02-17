@@ -26,6 +26,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.checkCookie();
     setInterval(() => this.checkCookie(), 4000);
   }
 
