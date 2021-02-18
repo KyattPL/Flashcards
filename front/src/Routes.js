@@ -11,7 +11,6 @@ import SignUpPage from './components/SignUpPage.js';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 function Routes(props) {
-    console.log(props.loggedStatus);
     return (
         <div className="App">
             <Header user={props.user} loggedStatus={props.loggedStatus} changeLoggedStatus={props.changeLoggedStatus} />
