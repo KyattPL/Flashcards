@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI, (err) => {
 const User = mongoose.model("User", { name: String, email: String, password: String }, "Users");
 
 app.use(express.static(path.join(__dirname, "/front/build")));
-app.use(session({ secret: process.env.SESSION_SECRET, store: sessionstore.createSessionStore(), saveUninitialized: false, resave: true, cookie: { maxAge: 10000 } }));
+app.use(session({ secret: process.env.SESSION_SECRET, store: sessionstore.createSessionStore(), saveUninitialized: false, resave: true, cookie: { maxAge: 3600000 } }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
@@ -66,6 +66,17 @@ app.post('/login', (req, res) => {
 app.get('/isLoggedIn', (req, res) => {
     if (req.session.email) res.send(true);
     else res.send(false);
+});
+
+app.get('/logout', (req, res) => {
+    if (req.session.email) {
+        req.session.destroy((err) => {
+            if (err) return console.log(err);
+            else return res.sendStatus(200);
+        });
+    } else {
+        return res.send("NOT_LOGGED_IN");
+    }
 });
 
 app.get('*', (req, res) => {

@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
 import LoginName from './LoginName.js';
+import tryLoggingOut from '../components/tryLoggingOut.js';
 import '../styles/Header.css';
 
 function Header(props) {
@@ -25,7 +26,7 @@ function Header(props) {
                 </Nav>
                 <LoginName user={props.user} loggedStatus={props.loggedStatus} />
                 {props.loggedStatus ?
-                    <Button className="mr-3" variant="outline-warning">Log out</Button>
+                    <Button className="mr-3" variant="outline-warning" onClick={() => tryLoggingOut(props.changeLoggedStatus)}>Log out</Button>
                     : <Button className="mr-3" variant="outline-success" as={Link} to="/login">Log in</Button>
                 }
                 <Form inline className="mt-2 mt-lg-0">

@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Header from './components/Header.js';
 import Deck from './components/Deck.js';
 import LoginPage from './components/LoginPage.js';
+import tryLoggingOut from './components/tryLoggingOut.js';
 import SignUpPage from './components/SignUpPage.js';
 
 import { Redirect, Route, Switch } from 'react-router-dom';
@@ -39,6 +40,9 @@ function Routes(props) {
                 </Route>
                 <Route path="/signup">
                     {props.loggedStatus ? <Redirect to="/" /> : <SignUpPage />}
+                </Route>
+                <Route path="/logout">
+                    {props.loggedStatus ? console.log("oh boi") : <Redirect to="/" />}
                 </Route>
                 <Route>
                     <h1>Bad page</h1>
